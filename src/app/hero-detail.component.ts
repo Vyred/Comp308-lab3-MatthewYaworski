@@ -11,6 +11,10 @@ import { Hero } from './hero';
   selector: 'my-hero-detail',
   templateUrl: './hero-detail.component.html',
   template: `
+
+  <a *ngFor="let hero of heroes" 
+   [routerLink]="['/detail', hero.id]" 
+    class="col-1-4">
   <div *ngIf="hero">
     <h2>{{hero.name}} details!</h2>
     <div><label>id: </label>{{hero.id}}</div>
